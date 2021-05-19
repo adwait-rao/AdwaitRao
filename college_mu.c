@@ -22,7 +22,7 @@ void loadinganimation()
 {
     int a, i, j;
     system("color 0E");
-    printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\Loading ");
+    printf("\n\n\n\n\n\n\n\n\n\n\t\t\tLoading ");
     for (i = 0; i<=20; i++)
     {
         for (j = 0; j<10000000; j++)
