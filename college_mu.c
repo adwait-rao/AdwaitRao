@@ -2,12 +2,12 @@
 #include <string.h>
 void welcome_screen();
 void loading_animation();
-void login();
 void main(){
     loading_animation();
     login();
 }
 void login(){
+    
     int e=5;
     char username[20];
     char password[20];
@@ -16,6 +16,7 @@ void login(){
     for(e=5;e>=0;e--){
     system("cls");
     welcome_screen();
+    system("color 3C");
     printf("\n\n\t\t\t Enter UserName :- ");
     scanf("%s",username);
     printf("\n\n\t\t\t Enter Password :- ");
