@@ -18,7 +18,7 @@ void loading_animation()
 {
     int a, i, j;
     system("color 0A");
-    printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\Loading Please Wait ");
+    printf("\n\n\n\n\n\n\n\n\n\n\t\t\tLoading Please Wait ");
     for (i = 0; i<=20; i++)
     {
         for (j = 0; j<10000000; j++)
