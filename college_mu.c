@@ -1,76 +1,54 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-//#include <type.h>
-#include <windows.h>
-void loadinganimation();
-void title();
-void adminlogin();
-int main()
-{
-    loadinganimation();
-    system("cls");
-    adminlogin();
+void welcome_screen();
+void loading_animation();
+void login();
+void main(){
+    loading_animation();
+    login();
 }
-
-void loadinganimation()
-{
-    int a, i, j;
-    system("color 0A");
-    printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\Loading ");
-    for (i = 0; i<=20; i++)
-    {
-        for (j = 0; j<10000000; j++)
-        {
-            a = j;
-        }
-            printf("%c", 219);
-    }
-    return 0;
-}
-
-void title()
-{
-    system("color 0f");
-    //system("pause");
-    system("cls");
-    printf("\n\n");
-    printf("\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4 \n");
-    printf("\t\4\t                                                   \t\4\n");
-    printf("\t\4\tCollege Management Utility - version 0.0001 alpha \t\4\n");
-    printf("\t\4\t                                                   \t\4\n");
-    printf("\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\n");
-    printf("\n\n\n\n\t\t1. Option 1\n");
-    printf("\t\t2. Option 2\n");
-    printf("\t\t3. Option 3\n");
-    printf("\t\t4. Option 4\n");
-    printf("\t\t5. Option 5\n");
-    system("pause");
-}
-
-void adminlogin()
-{
+void login(){
+    int e=5;
     char username[20];
     char password[20];
-    char rusername[20] = {"admin"};
-    char rpassword[20] = {"admin"};
-    L:
-    title();
-    printf("\n\n\t\tUsername: ");
-    gets(username);
-    printf("\n\t\tPassword: ");
-    gets(password);
-
-    if(strcmp(rusername, username)!=0 && strcmp(rpassword, password)!=0)
-    {
-        printf("Wrong Username Or Password, Please Try Again And\nInput Credentials Carefully.");
-        system("pause");
-        system("cls");
-        goto L;
+    char real_username[20]="heramb";
+    char real_password[20]="4270";
+    for(e=5;e>=0;e--){
+    system("cls");
+    welcome_screen();
+    printf("\n\n\t\t\t Enter UserName :- ");
+    scanf("%s",username);
+    printf("\n\n\t\t\t Enter Password :- ");
+    scanf("%s",password);
+       if(strcmp(username,real_username)==0  &&  strcmp(password,real_password)==0){
+           printf("\n\n\n\n\t\t\t\t ........Login Successfull........");
+           getch();
+           break;
+       }else{
+           printf("\n\n\n\t\t\t Password Is Incorrect (Try Again) ");
+           printf("\n\n\n\t\t\t\t\t Tries Remaining :-  %d (Press Any Key to Continue)",e);
+           getch();
+       }
     }
-    else if(strcmp(rusername, username)==0 && strcmp(rpassword, password)==0)
-    {
-        printf("Login Successful!.\n");
-        //function for choise redirecting to a function by switch statement
+}
+void welcome_screen(){
+    system("color 0f");
+    system("cls");
+    printf("\n\n\n");
+    printf("\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4 \n");
+    printf("\t\4\t                                                   \t\4\n");
+    printf("\t\4\t College Management Utility - version 0.0001 alpha \t\4\n");
+    printf("\t\4\t                                                   \t\4\n");
+    printf("\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4 \n");
+}
+void loading_animation(){
+    int i=0,a,j;
+    system("color 0A");
+    printf("\n\n\n\n\n\n\n\n\n\n\t\tLoading Please Wait ");
+    for( i=0;i<=20;i++){
+       for(j=0;j<=100000000;j++){
+         a=j;
+       }
+    printf("%c",219);
     }
 }
