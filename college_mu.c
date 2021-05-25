@@ -3,7 +3,6 @@
 #include <string.h>
 #include <conio.h>
 #include <windows.h>
-
 void loading_animation();
 void title();
 void admin_login();
@@ -34,7 +33,7 @@ void loading_animation()
     gotoxy(50, 19);
     for (i = 0; i <= 22; i++)
     {
-        for (j = 0; j < 100000000; j++)
+        for (j = 0; j < 10000000; j++)
         {
             a = j;
         }
@@ -47,11 +46,11 @@ void title()
     system("color 0f");
     system("cls");
     printf("\n\n");
-    printf("\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4 \n");
-    printf("\t\4\t                                                   \t\4\n");
-    printf("\t\4\tCollege Management Utility - version 0.0001 alpha \t\4\n");
-    printf("\t\4\t                                                   \t\4\n");
-    printf("\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\n");
+    printf("\t\t\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\n");
+    printf("\t\t\t\4\t                                                  \t\4\n");
+    printf("\t\t\t\4\t College Management Utility - version 0.0001 alpha \t\4\n");
+    printf("\t\t\t\4\t                                                  \t\4\n");
+    printf("\t\t\t\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\4\n");
 }
 
 void admin_login()
@@ -61,16 +60,16 @@ void admin_login()
     char rusername[20] = {"admin"};
     char rpassword[20] = {"admin"};
     title();
-    system("color 0F");
+    system("color 79");
     int e;
     for (e = 4; e >= 0; e--)
     {
-        printf("\n\t-----------------------------------------------------------------\n");
-        printf("\t\t                  Login Page\n");
-        printf("\t-----------------------------------------------------------------\n");
-        printf("\n\t\t\t Username: ");
+        printf("\n\t-----------------------------------------------------------------------------------------------------\n");
+        printf("\t\t\t\t                  Login Page\n");
+        printf("\t-----------------------------------------------------------------------------------------------------\n");
+        printf("\n\n\t\t\t USERNAME: ");
         gets(username);
-        printf("\n\t\t\t Password: ");
+        printf("\n\n\n\n\t\t\t PASSWORD: ");
         gets(password);
 
         if (strcmp(username, rusername) == 0 && strcmp(password, rpassword) == 0)
@@ -110,17 +109,17 @@ void main_menu()
 {
     int choise;
     system("cls");
-//title();
+    system("color 3E");
 r:
-    printf("\n\t-----------------------------------------------------------------\n");
-    printf("\t\t                   Main Menu\n");
-    printf("\t-----------------------------------------------------------------\n");
-    printf("\n\t\t\t1. Add Records");
-    printf("\n\t\t\t2. View Records");
-    printf("\n\t\t\t3. Search Record");
-    printf("\n\t\t\t4. Exit");
+    printf("\n\t\t\t-----------------------------------------------------------------\n");
+    printf("\t\t\t\t                   Main Menu\n");
+    printf("\t\t\t-----------------------------------------------------------------\n");
+    printf("\n\t\t\t\t\t1. Add Records");
+    printf("\n\n\n\t\t\t\t\t2. View Records");
+    printf("\n\n\n\t\t\t\t\t3. Search Record");
+    printf("\n\n\n\t\t\t\t\t4. Exit");
 
-    printf("\n\n\t\t\tEnter The Option: ");
+    printf("\n\n\n\n\t\t\t\t\tEnter The Option: ");
     scanf("%d", &choise);
     switch (choise)
     {
@@ -137,12 +136,12 @@ r:
         break;
 
     case 4:
-        printf("\n\n\t\t\t Thanks You For Using Our Software !!!!!!!");
+        printf("\n\n\t\t\t\t\t Thanks You For Using Our Software !!!!!!!");
         getch();
         exit (0);   
 
     default:
-        printf("\n\t\t\tInvalid Option!");
+        printf("\n\t\t\t\t\tInvalid Option!");
         getche();
         system("cls");
         goto r;
@@ -152,6 +151,7 @@ r:
 
 void add_rec()
 {
+    system("color 5F");
     FILE *data;
     data = fopen("studnt.bin", "ab");
     int valid;
@@ -201,7 +201,7 @@ name:
 
     //***********Last Name**************
 lastname:
-    printf("\n\t\t\tLast Name: ");
+    printf("\n\n\t\t\tLast Name: ");
     scanf("%s", &p.Last_Name);
     int i;
     if (strlen(p.Last_Name) > 20 || strlen(p.Last_Name) < 2)
@@ -238,13 +238,13 @@ lastname:
 
     //***********Gender*****************
 gender:
-    printf("\n\t\t\tGender(M/F): ");
+    printf("\n\n\t\t\tGender(M/F): ");
     scanf("%s", &p.Gender);
     p.Gender[0] = toupper(p.Gender[0]);
 
     //***********AGE*************
 age:
-    printf("\n\t\t\tAge: ");
+    printf("\n\n\t\t\tAge: ");
     scanf("%d", &p.age);
 
     if (isalpha(p.age))
@@ -254,7 +254,7 @@ age:
 
     //**************Contact Number****************
 contact:
-    printf("\n\t\t\tContact Number: ");
+    printf("\n\n\t\t\tContact Number: ");
     scanf("%s", &p.Contact_no);
 
     if (strlen(p.Contact_no) != 10)
@@ -289,7 +289,7 @@ contact:
 
     //********emali****************
 email:
-    printf("\n\t\t\tEmail ID: ");
+    printf("\n\n\t\t\tEmail ID: ");
     scanf("%s", &p.email);
 
     if (strlen(p.email) > 35 || strlen(p.email) < 8)
@@ -301,7 +301,7 @@ email:
     //**********Enrollment Number**************
 
 enrollment:
-    printf("\n\t\t\tEnrollment No: ");
+    printf("\n\n\t\t\tEnrollment No: ");
     scanf("%s", &p.Enrollment);
     int b;
     if (strlen(p.Enrollment) == 10)
@@ -335,7 +335,7 @@ enrollment:
     /// ************************************** Department ***********************************
 
 department:
-    printf("\n\t\t\t Department :- ");
+    printf("\n\n\t\t\t Department :- ");
     scanf("%s", &p.department1);
     p.department1[0] = toupper(p.department1[0]);
     char pp;
@@ -363,7 +363,7 @@ department:
 
     while (1)
     {
-        printf("\n\t\tDo You Want To Add More Record?(Y/N): ");
+        printf("\n\n\n\t\tDo You Want To Add More Record?(Y/N): ");
         fflush(stdin);
         scanf("%c", &ans);
         switch (ans)
@@ -388,12 +388,13 @@ department:
 }
 
 void view_records()
-{
+{ 
+    system("color 7D");
     int row;
     system("cls");
-    printf("\n\t-----------------------------------------------------------------\n");
-    printf("\t\t                   View Records\n");
-    printf("\t-----------------------------------------------------------------\n");
+    printf("\n\t------------------------------------------------------------------------------------------------------------------------------------------\n");
+    printf("\t\t\t                                                           View Records\n");
+    printf("\t-------------------------------------------------------------------------------------------------------------------------------------------\n");
 
     FILE *data;
     data = fopen("studnt.bin", "rb");
@@ -411,7 +412,7 @@ void view_records()
     printf("Enrollment");
     gotoxy(130, 10);
     printf("Department\n");
-    printf("************************************************************************************************************************\n");
+    printf("***********************************************************************************************************************************************\n");
     row = 13;
     //while(fscanf(data, "%s %s %s %d %s %s %s %u", p.First_Name, p.Last_Name, p.Gender, p.age, p.Contact_no, p.email, p.branch, p.enr_num))
     while (fread(&p, sizeof(struct student), 1, data))
@@ -439,17 +440,16 @@ void view_records()
     main_menu();
 }
 void search_rec()
-{
-    char name[30];
+{   system("cls");
     title();
+    char name[30];
+    system("color F0");
     FILE *data;
     data = fopen("studnt.bin", "rb");
     printf("\n\n\n\t\t\t ******************* Search Student Record *******************\n\n");
-    printf("Enter Student's First Name :- ");
+    printf("\n\n\t\t\tEnter Student's First Name :- ");
     scanf("%s", name);
-    fflush(stdin);
-    system("cls");
-    title();
+    fflush(stdin);      
     name[0] = toupper(name[0]);
     while (fread(&p, sizeof(struct student), 1, data))
     {
@@ -469,7 +469,7 @@ void search_rec()
             printf("Enrollment");
             gotoxy(130, 10);
             printf("Department\n");
-            printf("************************************************************************************************************************\n");
+            printf("***************************************************************************************************************************************\n");
             gotoxy(1, 13);
             printf("%s %s", p.First_Name, p.Last_Name);
             gotoxy(22, 13);
