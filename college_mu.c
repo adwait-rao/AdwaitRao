@@ -118,7 +118,7 @@ r:
     printf("\n\n\n\t\t\t\t\t2. View Records");
     printf("\n\n\n\t\t\t\t\t3. Search Record");
     printf("\n\n\n\t\t\t\t\t4. Exit");
-
+    printf("\n\n\n\t\t\t\t Note :- PLease Veiw The Screen In a  Maximize Mode !!!!!!!!!");
     printf("\n\n\n\n\t\t\t\t\tEnter The Option: ");
     scanf("%d", &choise);
     switch (choise)
@@ -449,40 +449,41 @@ void search_rec()
     printf("\n\n\n\t\t\t ******************* Search Student Record *******************\n\n");
     printf("\n\n\t\t\tEnter Student's First Name :- ");
     scanf("%s", name);
-    fflush(stdin);      
+    fflush(stdin);  
+	
     name[0] = toupper(name[0]);
     while (fread(&p, sizeof(struct student), 1, data))
     {
         if (strcmp(p.First_Name, name) == 0)
         {
-            gotoxy(1, 10);
+            gotoxy(1, 20);
             printf("Name");
-            gotoxy(20, 10);
+            gotoxy(20, 20);
             printf("Gender");
-            gotoxy(32, 10);
+            gotoxy(32, 20);
             printf("Age");
-            gotoxy(45, 10);
+            gotoxy(45, 20);
             printf("Contact Number");
-            gotoxy(79, 10);
+            gotoxy(79, 20);
             printf("Email");
-            gotoxy(100, 10);
+            gotoxy(100, 20);
             printf("Enrollment");
-            gotoxy(130, 10);
+            gotoxy(130, 20);
             printf("Department\n");
             printf("***************************************************************************************************************************************\n");
-            gotoxy(1, 13);
+            gotoxy(1, 24);
             printf("%s %s", p.First_Name, p.Last_Name);
-            gotoxy(22, 13);
+            gotoxy(22, 24);
             printf("%s", p.Gender);
-            gotoxy(32, 13);
+            gotoxy(32, 24);
             printf("%d", p.age);
-            gotoxy(45, 13);
+            gotoxy(45, 24);
             printf("%s", p.Contact_no);
-            gotoxy(68, 13);
+            gotoxy(68, 24);
             printf("%s", p.email);
-            gotoxy(100, 13);
+            gotoxy(100, 24);
             printf("%s", p.Enrollment);
-            gotoxy(130, 13);
+            gotoxy(130, 24);
             printf("%s", p.department1);
             printf("\n");
             break;
@@ -491,7 +492,10 @@ void search_rec()
     }
     if (strcmp(p.First_Name, name) != 0)
     {
-        gotoxy(5, 10);
+    	system("cls");
+    	title();
+        gotoxy(15, 10);    
+		system("color F0"); 
         printf("Record Not Found");
         getch();
     }
