@@ -33,6 +33,7 @@ struct student
 
 int main()
 {
+	system("color 5f");
 	int op;
 	loading();
 	clrscr();
@@ -41,12 +42,12 @@ int main()
 	{
 		clrscr();
 		printf("\n\t\t%c%c%c%c STUDENT MANAGEMENT PROGRAM %c%c%c%c\n\n\n", 178, 178, 178, 178, 178, 178, 178, 178);
-		printf("\t1. Add Record\n");
-		printf("\t2. View Record\n");
-		printf("\t3. Delete Record\n");
-		printf("\t4. Modify Record\n");
-		printf("\t5. Search Record\n\n");
-		printf("\t6. Exit\n\n");
+		printf("\t\t\t1. Add Record\n");
+		printf("\t\t\t2. View Record\n");
+		printf("\t\t\t3. Delete Record\n");
+		printf("\t\t\t4. Modify Record\n");
+		printf("\t\t\t5. Search Record\n\n");
+		printf("\t\t\t6. Exit\n\n");
 		printf("\t ENTER YOUR CHOISE: ");
 		scanf("%d", &op);
 
@@ -83,7 +84,6 @@ int main()
 			
 			default:
 			printf("Enter Valid Option!\n");
-			getch();
 			break;
 		}
 		getch();
@@ -214,7 +214,7 @@ void delete()
 	remove("student.bin");
 	rename("student1.bin", "student.bin");
 	printf("\t\tRECORD UPDATED SUCCESSFULLY\n");
-	display();
+	getch();
 }
 
 void modify()
